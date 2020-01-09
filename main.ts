@@ -175,6 +175,25 @@ b b b b b b b b b b b b b b b b
 `
     //% blockIdentity=images._tile
     export const tile9 = img`
+b b f f b f f f f f b b b b b b 
+b f 3 3 f 3 3 3 3 3 f f 8 8 b b 
+f 3 3 f 3 3 3 3 3 3 3 3 f 8 8 b 
+f 3 3 3 3 3 1 3 1 3 3 3 3 f 8 b 
+f 3 3 3 3 3 f 3 f 3 3 3 3 f 8 b 
+f 3 3 3 3 3 8 3 8 3 3 3 3 3 f b 
+f 3 3 3 2 2 3 3 3 2 2 3 3 3 3 f 
+f 3 3 3 3 3 3 f 3 3 3 3 3 3 3 f 
+b f 3 3 3 3 3 2 3 3 3 3 3 3 3 f 
+b f 3 3 3 3 3 3 3 3 3 3 f f f b 
+b f 3 3 3 3 3 3 3 3 3 f a a a f 
+b 8 f 3 3 3 3 3 3 3 f a a a a f 
+b 8 f f 3 3 3 3 3 3 f a a a a f 
+b f a a f f 3 3 3 f a a a a f b 
+b b a a a a f f f f f a a f b b 
+b b b b b b b b b b f f f b b b 
+`
+    //% blockIdentity=images._tile
+    export const tile10 = img`
 b b b b b b b b b b b b b b b b 
 b b . . . . . . . . . . . . b b 
 b . . . . . . . . . . . . . . b 
@@ -242,7 +261,7 @@ function Map1 () {
 . . . . . . . . . . 
 . . . . . . . . . . 
 `,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,sprites.dungeon.greenOuterNorth0,sprites.dungeon.chestOpen,sprites.builtin.forestTiles1,sprites.builtin.forestTiles3,sprites.builtin.forestTiles2,sprites.builtin.forestTiles5,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.builtin.forestTiles6,sprites.builtin.forestTiles8,sprites.builtin.forestTiles7,sprites.builtin.forestTiles10,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9],
+            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,sprites.dungeon.greenOuterNorth0,sprites.dungeon.chestOpen,sprites.builtin.forestTiles1,sprites.builtin.forestTiles3,sprites.builtin.forestTiles2,sprites.builtin.forestTiles5,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.builtin.forestTiles6,sprites.builtin.forestTiles8,sprites.builtin.forestTiles7,sprites.builtin.forestTiles10,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10],
             TileScale.Sixteen
         ))
 }
@@ -274,7 +293,7 @@ function Menu () {
     scene.centerCameraAt(88, 0)
     scene.setBackgroundColor(1)
     tiles.setTilemap(tiles.createTilemap(
-            hex`0b0008000a0a0a0a0a0a0a0a0a0a0a0a0a0b0a0a0c0a0a0c0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0c0a0a0c0a0a0c0a0a0a0a0a0a0a0a0a0a0a0a0a02020202020202020202020202020c0202020c0202020202020202020202020202`,
+            hex`0b0008000a0a0a0a0a0a0a0a0a0a0a0a0a0b0a0a0c0a0a0d0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0d0a0a0d0a0a0d0a0a0a0a0a0a0a0a0a0a0a0a0a02020202020202020202020202020d0202020d0202020202020202020202020202`,
             img`
 . . . . . . . . . . . 
 . . . . . . . . . . . 
@@ -285,7 +304,7 @@ function Menu () {
 . . . . . . . . . . . 
 . . . . . . . . . . . 
 `,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,sprites.builtin.oceanSand13,sprites.builtin.oceanSand8,sprites.builtin.brick,myTiles.tile8,myTiles.tile9],
+            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,sprites.builtin.oceanSand13,sprites.builtin.oceanSand8,sprites.builtin.brick,myTiles.tile8,myTiles.tile9,myTiles.tile10],
             TileScale.Sixteen
         ))
     Cursor_1()
