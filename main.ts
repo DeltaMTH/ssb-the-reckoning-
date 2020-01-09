@@ -158,25 +158,6 @@ f f f f f f f f f f f f f f f f
 function Link () {
 	
 }
-function Menu () {
-    scene.setBackgroundColor(1)
-    tiles.setTilemap(tiles.createTilemap(
-            hex`09000700010101010101010101010001010001010001010101010101010101010001010001010001010101010101010101020202020202020202020203020202030202`,
-            img`
-. . . . . . . . . 
-. . . . . . . . . 
-. . . . . . . . . 
-. . . . . . . . . 
-. . . . . . . . . 
-. . . . . . . . . 
-. . . . . . . . . 
-`,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7],
-            TileScale.Sixteen
-        ))
-    Cursor_1()
-    Cursor_2()
-}
 function Mario () {
 	
 }
@@ -228,6 +209,25 @@ function Map1 () {
 }
 function Pikachu () {
 	
+}
+function Menu () {
+    scene.setBackgroundColor(1)
+    tiles.setTilemap(tiles.createTilemap(
+            hex`09000700010101010101010101010001010001010001010101010101010101010001010001010001010101010101010101020202020202020202020203020202030202`,
+            img`
+. . . . . . . . . 
+. . . . . . . . . 
+. . . . . . . . . 
+. . . . . . . . . 
+. . . . . . . . . 
+. . . . . . . . . 
+. . . . . . . . . 
+`,
+            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7],
+            TileScale.Sixteen
+        ))
+    Cursor_1()
+    Cursor_2()
 }
 function Cursor_1 () {
     Cursor1 = sprites.create(img`
@@ -317,10 +317,4 @@ d f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
     if (controller.player1.isPressed(ControllerButton.B)) {
         Ready.setVelocity(1000, 0)
     }
-})
-game.onUpdate(function () {
-    scene.cameraFollowSprite(Cursor1)
-})
-game.onUpdate(function () {
-    scene.cameraFollowSprite(Cursor2)
 })
