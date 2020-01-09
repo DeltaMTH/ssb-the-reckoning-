@@ -155,6 +155,9 @@ f f f f f f f f f f f f f f f f
 9 f f f f f f f f f f f f f f f 
 `
 }
+/**
+ * Le code pour le Menu
+ */
 function Link () {
 	
 }
