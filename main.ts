@@ -210,15 +210,8 @@ function Map1 () {
 function Pikachu () {
 	
 }
-function Samus () {
-	
-}
-let Ready: Sprite = null
-let LevelChoice = 0
-LevelChoice = 0
-let StartGame1 = 0
-let StartGame2 = 0
-let Cursor1 = sprites.create(img`
+function Cursor_1 () {
+    Cursor1 = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -236,7 +229,13 @@ let Cursor1 = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-let Cursor2 = sprites.create(img`
+    controller.moveSprite(Cursor1, 100, 100)
+}
+function Samus () {
+	
+}
+function Cursor_2 () {
+    Cursor2 = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -254,8 +253,15 @@ let Cursor2 = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-controller.moveSprite(Cursor1, 100, 100)
-controller.player2.moveSprite(Cursor2, 100, 100)
+    controller.player2.moveSprite(Cursor2, 100, 100)
+}
+let Ready: Sprite = null
+let Cursor2: Sprite = null
+let Cursor1: Sprite = null
+let LevelChoice = 0
+LevelChoice = 0
+let StartGame1 = 0
+let StartGame2 = 0
 scene.setBackgroundColor(1)
 tiles.setTilemap(tiles.createTilemap(
             hex`09000700010101010101010101010001010001010001010101010101010101010001010001010001010101010101010101020202020202020202020203020202030202`,
@@ -271,6 +277,8 @@ tiles.setTilemap(tiles.createTilemap(
             [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7],
             TileScale.Sixteen
         ))
+Cursor_1()
+Cursor_2()
 game.onUpdate(function () {
     if (StartGame1 >= 1 && StartGame2 >= 1) {
         Ready = sprites.create(img`
