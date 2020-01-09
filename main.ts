@@ -1,3 +1,6 @@
+namespace SpriteKind {
+    export const banner = SpriteKind.create()
+}
 namespace myTiles {
     //% blockIdentity=images._tile
     export const tile0 = img`
@@ -75,24 +78,122 @@ a a a a a a a a a a a a a a a a
 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
 `
+    //% blockIdentity=images._tile
+    export const tile4 = img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`
+    //% blockIdentity=images._tile
+    export const tile5 = img`
+f f f f f f f f f f f f f f f 1 
+f f 5 f f f f f f f f f f f f f 
+f 5 1 1 f f f f f f f 9 f f f f 
+f f 1 f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f 1 f f f f 
+1 f f f f f f f f f f f f f f f 
+f f f f f f 9 f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f 1 f f f f f f f f f f 9 f 
+f f f f f f f f f f f f f 9 1 1 
+f f f f f f f f f f f f f f 1 f 
+f f f f f f f f f f 9 f f f f f 
+1 f f f f f f f f f f f f f f f 
+`
+    //% blockIdentity=images._tile
+    export const tile6 = img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f 1 f f f f f f f 1 f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f 1 f f f f f f f f f f 
+f f f f f f f f f f f f f 1 f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f 1 f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f 1 1 f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f 1 f f f 
+f 1 f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`
+    //% blockIdentity=images._tile
+    export const tile7 = img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f 9 f f f f f f 
+f 9 f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f 9 f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f 9 f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+9 f f f f f f f f f f f f f f f 
+`
 }
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile0, function (sprite, location) {
     if (controller.player1.isPressed(ControllerButton.A)) {
         tiles.setTileAt(tiles.getTileLocation(2, 6), myTiles.tile3)
         tiles.setTileAt(tiles.getTileLocation(2, 6), myTiles.tile0)
-        StartGame1 = 1
+        StartGame1 += 1
     }
     if (controller.player2.isPressed(ControllerButton.A)) {
         tiles.setTileAt(tiles.getTileLocation(6, 6), myTiles.tile3)
         tiles.setTileAt(tiles.getTileLocation(6, 6), myTiles.tile0)
-        StartGame2 = 1
+        StartGame2 += 1
     }
 })
-let mySprite: Sprite = null
-let StartGame2 = 0
+sprites.onOverlap(SpriteKind.Player, SpriteKind.banner, function (sprite, otherSprite) {
+    if (controller.player1.isPressed(ControllerButton.A)) {
+        if (LevelChoice == 0) {
+            tiles.setTilemap(tiles.createTilemap(
+            hex`0a000900131112131113121112131112121212121213111211131112111112111313121112131312121212111212121213121212131213060808080808080711120c0c0c0c0c0c0c0c121010101010101010101010101010101010101010`,
+            img`
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+`,
+            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,sprites.dungeon.greenOuterNorth0,sprites.dungeon.chestOpen,sprites.builtin.forestTiles1,sprites.builtin.forestTiles3,sprites.builtin.forestTiles2,sprites.builtin.forestTiles5,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.builtin.forestTiles6,sprites.builtin.forestTiles8,sprites.builtin.forestTiles7,sprites.builtin.forestTiles10,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7],
+            TileScale.Sixteen
+        ))
+        }
+    }
+})
+let Ready: Sprite = null
+let LevelChoice = 0
+LevelChoice = 0
 let StartGame1 = 0
-StartGame1 = 0
-StartGame2 = 0
+let StartGame2 = 0
 let Cursor1 = sprites.create(img`
 . . . . . . . 2 2 2 2 2 2 2 2 2 
 . . . . . . . 2 f f f f f f f 2 
@@ -143,12 +244,12 @@ tiles.setTilemap(tiles.createTilemap(
 . . . . . . . . . 
 . . . . . . . . . 
 `,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3],
+            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7],
             TileScale.Sixteen
         ))
 game.onUpdate(function () {
-    if (StartGame1 == 1 && StartGame2 == 1) {
-        mySprite = sprites.create(img`
+    if (StartGame1 >= 1 && StartGame2 >= 1) {
+        Ready = sprites.create(img`
 d d 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 4 4 4 5 5 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 4 4 4 5 5 
 d d 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 4 4 4 5 5 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 4 4 4 5 5 2 2 
 d d 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 4 4 4 5 5 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 4 4 4 5 5 2 2 2 2 
@@ -174,6 +275,17 @@ d d 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 d d 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 4 4 4 5 5 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 4 4 4 5 5 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 d d f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
 d f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
-`, SpriteKind.Player)
+`, SpriteKind.banner)
+        StartGame1 = 0
+        StartGame2 = 0
     }
+    if (controller.player1.isPressed(ControllerButton.B)) {
+        Ready.setVelocity(1000, 0)
+    }
+})
+game.onUpdate(function () {
+    scene.cameraFollowSprite(Cursor1)
+})
+game.onUpdate(function () {
+    scene.cameraFollowSprite(Cursor2)
 })
