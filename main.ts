@@ -156,21 +156,21 @@ f f f f f f f f f f f f f f f f
 `
     //% blockIdentity=images._tile
     export const tile8 = img`
-b b b b b b b b b b b b b b b b 
-b b 4 4 4 2 2 2 2 2 2 2 4 4 b b 
-b 4 4 2 2 2 2 2 2 2 2 2 2 4 4 b 
-b 4 2 2 2 2 2 2 2 2 2 2 2 2 4 b 
-b 4 4 2 2 2 2 2 2 2 2 2 d 2 4 b 
-b 4 4 d d d d d d d d d d 4 4 b 
-b 4 4 d d d d d d f d f d 4 4 b 
-b 4 4 d d d d d d d d d d 4 4 b 
-b 4 4 4 d d d d f d d d d 4 4 b 
-b 4 4 4 d d d d f f f d 4 4 4 b 
-b 4 4 4 4 d d d d d d 4 4 4 4 b 
-b 4 4 4 2 8 2 2 2 2 8 2 4 4 4 b 
-b 4 4 2 2 8 2 2 2 2 8 2 2 4 4 b 
-b 4 4 2 8 2 2 2 2 2 8 8 2 4 4 b 
-b b 4 2 8 2 2 2 2 2 . 8 2 4 b b 
+b b b b b b b b 2 2 2 2 2 b b b 
+b b 7 7 7 7 2 2 2 2 2 5 2 2 b b 
+b 7 7 7 7 2 2 2 2 2 5 5 5 2 7 b 
+b 7 7 7 2 2 2 2 2 f f f f f f b 
+b 7 7 2 2 2 2 f f f f f f f f f 
+b 7 7 2 d f f f d f d f d 7 7 b 
+b 7 2 d e d f d d f d f d e e b 
+b 7 2 d e d f f d d d d d d d e 
+b 7 2 f d d f d d f d d d d d e 
+b 7 7 f f d d d f f f f f f f b 
+b 7 7 7 f e e d d d f f f f 7 b 
+b 7 7 7 7 2 2 e e e e 8 7 7 7 b 
+b 7 7 7 2 2 2 2 8 8 8 8 8 7 7 b 
+b 7 7 7 2 e e e 8 5 5 8 5 5 7 b 
+b b 7 7 e 1 1 1 e 5 5 8 5 5 b b 
 b b b b b b b b b b b b b b b b 
 `
     //% blockIdentity=images._tile
@@ -193,9 +193,6 @@ b b . . . . . . . . . . . . b b
 b b b b b b b b b b b b b b b b 
 `
 }
-/**
- * Le code pour le Menu
- */
 function Link () {
 	
 }
