@@ -209,6 +209,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.banner, function (sprite, otherS
     if (controller.player1.isPressed(ControllerButton.A)) {
         if (LevelChoice == 0) {
             Map1()
+            Ready.destroy()
         }
     }
 })
@@ -232,7 +233,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location
 })
 function Map1 () {
     tiles.setTilemap(tiles.createTilemap(
-            hex`0a000900131112131113121112131112121212121213111211131112111112111313121112131312121212111212121213121212131213060808080808080711120c0c0c0c0c0c0c0c121010101010101010101010101010101010101010`,
+            hex`0a000900131112131113121112131112121112121213111211131112111112111313121112131312121212111212121213121212131213060808080808080711120c0c0c0c0c0c0c0c121010101010101010101010101010101010101010`,
             img`
 . . . . . . . . . . 
 . . . . . . . . . . 
@@ -250,6 +251,27 @@ function Map1 () {
 }
 function Pikachu () {
 	
+}
+function Cursor_2 () {
+    Cursor2 = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . f f f f f f f . . . . . 
+. . . . f 8 8 8 8 8 f . . . . . 
+. . . . . f 8 8 8 8 f . . . . . 
+. . . . . . f 8 8 8 f . . . . . 
+. . . . . f 8 f 8 8 f . . . . . 
+. . . . f 8 f . f 8 f . . . . . 
+. . . f 8 f . . . f f . . . . . 
+. . . . f . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+    controller.player2.moveSprite(Cursor2, 100, 100)
 }
 function Menu () {
     scene.centerCameraAt(88, 0)
@@ -296,34 +318,13 @@ function Cursor_1 () {
 function Samus () {
 	
 }
-function Cursor_2 () {
-    Cursor2 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . f f f f f f f . . . . . 
-. . . . f 8 8 8 8 8 f . . . . . 
-. . . . . f 8 8 8 8 f . . . . . 
-. . . . . . f 8 8 8 f . . . . . 
-. . . . . f 8 f 8 8 f . . . . . 
-. . . . f 8 f . f 8 f . . . . . 
-. . . f 8 f . . . f f . . . . . 
-. . . . f . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-    controller.player2.moveSprite(Cursor2, 100, 100)
-}
-let Ready: Sprite = null
-let Cursor2: Sprite = null
 let Cursor1: Sprite = null
+let Cursor2: Sprite = null
+let StartGame2 = 0
+let StartGame1 = 0
+let Ready: Sprite = null
 let LevelChoice = 0
 LevelChoice = 0
-let StartGame1 = 0
-let StartGame2 = 0
 Menu()
 game.onUpdate(function () {
     if (StartGame1 >= 1 && StartGame2 >= 1) {
