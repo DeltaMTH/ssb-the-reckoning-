@@ -154,6 +154,44 @@ f f f f f f f f f f f f f f f f
 f f f f f f f f f f f f f f f f 
 9 f f f f f f f f f f f f f f f 
 `
+    //% blockIdentity=images._tile
+    export const tile8 = img`
+b b b b b b b b b b b b b b b b 
+b b 4 4 4 2 2 2 2 2 2 2 4 4 b b 
+b 4 4 2 2 2 2 2 2 2 2 2 2 4 4 b 
+b 4 2 2 2 2 2 2 2 2 2 2 2 2 4 b 
+b 4 4 2 2 2 2 2 2 2 2 2 d 2 4 b 
+b 4 4 d d d d d d d d d d 4 4 b 
+b 4 4 d d d d d d f d f d 4 4 b 
+b 4 4 d d d d d d d d d d 4 4 b 
+b 4 4 4 d d d d f d d d d 4 4 b 
+b 4 4 4 d d d d f f f d 4 4 4 b 
+b 4 4 4 4 d d d d d d 4 4 4 4 b 
+b 4 4 4 2 8 2 2 2 2 8 2 4 4 4 b 
+b 4 4 2 2 8 2 2 2 2 8 2 2 4 4 b 
+b 4 4 2 8 2 2 2 2 2 8 8 2 4 4 b 
+b b 4 2 8 2 2 2 2 2 . 8 2 4 b b 
+b b b b b b b b b b b b b b b b 
+`
+    //% blockIdentity=images._tile
+    export const tile9 = img`
+b b b b b b b b b b b b b b b b 
+b b . . . . . . . . . . . . b b 
+b . . . . . . . . . . . . . . b 
+b . . . . . . . . . . . . . . b 
+b . . . . . . . . . . . . . . b 
+b . . . . . . . . . . . . . . b 
+b . . . . . . . . . . . . . . b 
+b . . . . . . . . . . . . . . b 
+b . . . . . . . . . . . . . . b 
+b . . . . . . . . . . . . . . b 
+b . . . . . . . . . . . . . . b 
+b . . . . . . . . . . . . . . b 
+b . . . . . . . . . . . . . . b 
+b . . . . . . . . . . . . . . b 
+b b . . . . . . . . . . . . b b 
+b b b b b b b b b b b b b b b b 
+`
 }
 /**
  * Le code pour le Menu
@@ -164,21 +202,9 @@ function Link () {
 function Mario () {
 	
 }
-function Fox () {
+function Mrgame () {
 	
 }
-scene.onOverlapTile(SpriteKind.Player, myTiles.tile0, function (sprite, location) {
-    if (controller.player1.isPressed(ControllerButton.A)) {
-        tiles.setTileAt(tiles.getTileLocation(2, 6), myTiles.tile3)
-        tiles.setTileAt(tiles.getTileLocation(2, 6), myTiles.tile0)
-        StartGame1 += 1
-    }
-    if (controller.player2.isPressed(ControllerButton.A)) {
-        tiles.setTileAt(tiles.getTileLocation(6, 6), myTiles.tile3)
-        tiles.setTileAt(tiles.getTileLocation(6, 6), myTiles.tile0)
-        StartGame2 += 1
-    }
-})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.banner, function (sprite, otherSprite) {
     if (controller.player1.isPressed(ControllerButton.A)) {
         if (LevelChoice == 0) {
@@ -192,6 +218,18 @@ function Kirby () {
 function Ike () {
 	
 }
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location) {
+    if (controller.player1.isPressed(ControllerButton.A)) {
+        tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile3)
+        tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile8)
+        StartGame1 += 1
+    }
+    if (controller.player2.isPressed(ControllerButton.A)) {
+        tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile3)
+        tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile8)
+        StartGame2 += 1
+    }
+})
 function Map1 () {
     tiles.setTilemap(tiles.createTilemap(
             hex`0a000900131112131113121112131112121212121213111211131112111112111313121112131312121212111212121213121212131213060808080808080711120c0c0c0c0c0c0c0c121010101010101010101010101010101010101010`,
@@ -206,7 +244,7 @@ function Map1 () {
 . . . . . . . . . . 
 . . . . . . . . . . 
 `,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,sprites.dungeon.greenOuterNorth0,sprites.dungeon.chestOpen,sprites.builtin.forestTiles1,sprites.builtin.forestTiles3,sprites.builtin.forestTiles2,sprites.builtin.forestTiles5,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.builtin.forestTiles6,sprites.builtin.forestTiles8,sprites.builtin.forestTiles7,sprites.builtin.forestTiles10,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7],
+            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,sprites.dungeon.greenOuterNorth0,sprites.dungeon.chestOpen,sprites.builtin.forestTiles1,sprites.builtin.forestTiles3,sprites.builtin.forestTiles2,sprites.builtin.forestTiles5,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.builtin.forestTiles6,sprites.builtin.forestTiles8,sprites.builtin.forestTiles7,sprites.builtin.forestTiles10,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9],
             TileScale.Sixteen
         ))
 }
@@ -214,19 +252,21 @@ function Pikachu () {
 	
 }
 function Menu () {
+    scene.centerCameraAt(88, 0)
     scene.setBackgroundColor(1)
     tiles.setTilemap(tiles.createTilemap(
-            hex`09000700010101010101010101010001010001010001010101010101010101010001010001010001010101010101010101020202020202020202020203020202030202`,
+            hex`0b0008000a0a0a0a0a0a0a0a0a0a0a0a0a0b0a0a0c0a0a0c0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0c0a0a0c0a0a0c0a0a0a0a0a0a0a0a0a0a0a0a0a02020202020202020202020202020c0202020c0202020202020202020202020202`,
             img`
-. . . . . . . . . 
-. . . . . . . . . 
-. . . . . . . . . 
-. . . . . . . . . 
-. . . . . . . . . 
-. . . . . . . . . 
-. . . . . . . . . 
+. . . . . . . . . . . 
+. . . . . . . . . . . 
+. . . . . . . . . . . 
+. . . . . . . . . . . 
+. . . . . . . . . . . 
+. . . . . . . . . . . 
+. . . . . . . . . . . 
+. . . . . . . . . . . 
 `,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7],
+            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,sprites.builtin.oceanSand13,sprites.builtin.oceanSand8,sprites.builtin.brick,myTiles.tile8,myTiles.tile9],
             TileScale.Sixteen
         ))
     Cursor_1()
