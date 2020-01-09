@@ -155,22 +155,29 @@ f f f f f f f f f f f f f f f f
 9 f f f f f f f f f f f f f f f 
 `
 }
-scene.onOverlapTile(SpriteKind.Player, myTiles.tile0, function (sprite, location) {
-    if (controller.player1.isPressed(ControllerButton.A)) {
-        tiles.setTileAt(tiles.getTileLocation(2, 6), myTiles.tile3)
-        tiles.setTileAt(tiles.getTileLocation(2, 6), myTiles.tile0)
-        StartGame1 += 1
-    }
-    if (controller.player2.isPressed(ControllerButton.A)) {
-        tiles.setTileAt(tiles.getTileLocation(6, 6), myTiles.tile3)
-        tiles.setTileAt(tiles.getTileLocation(6, 6), myTiles.tile0)
-        StartGame2 += 1
-    }
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.banner, function (sprite, otherSprite) {
-    if (controller.player1.isPressed(ControllerButton.A)) {
-        if (LevelChoice == 0) {
-            tiles.setTilemap(tiles.createTilemap(
+function Mario () {
+	
+}
+function Pikachu () {
+	
+}
+function Ike () {
+	
+}
+function Kirby () {
+	
+}
+function Samus () {
+	
+}
+function Fox () {
+	
+}
+function Link () {
+	
+}
+function Map1 () {
+    tiles.setTilemap(tiles.createTilemap(
             hex`0a000900131112131113121112131112121212121213111211131112111112111313121112131312121212111212121213121212131213060808080808080711120c0c0c0c0c0c0c0c121010101010101010101010101010101010101010`,
             img`
 . . . . . . . . . . 
@@ -186,6 +193,23 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.banner, function (sprite, otherS
             [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,sprites.dungeon.greenOuterNorth0,sprites.dungeon.chestOpen,sprites.builtin.forestTiles1,sprites.builtin.forestTiles3,sprites.builtin.forestTiles2,sprites.builtin.forestTiles5,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.builtin.forestTiles6,sprites.builtin.forestTiles8,sprites.builtin.forestTiles7,sprites.builtin.forestTiles10,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7],
             TileScale.Sixteen
         ))
+}
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile0, function (sprite, location) {
+    if (controller.player1.isPressed(ControllerButton.A)) {
+        tiles.setTileAt(tiles.getTileLocation(2, 6), myTiles.tile3)
+        tiles.setTileAt(tiles.getTileLocation(2, 6), myTiles.tile0)
+        StartGame1 += 1
+    }
+    if (controller.player2.isPressed(ControllerButton.A)) {
+        tiles.setTileAt(tiles.getTileLocation(6, 6), myTiles.tile3)
+        tiles.setTileAt(tiles.getTileLocation(6, 6), myTiles.tile0)
+        StartGame2 += 1
+    }
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.banner, function (sprite, otherSprite) {
+    if (controller.player1.isPressed(ControllerButton.A)) {
+        if (LevelChoice == 0) {
+            Map1()
         }
     }
 })
