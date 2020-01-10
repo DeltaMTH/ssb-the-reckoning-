@@ -357,29 +357,42 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.banner, function (sprite, otherSprite) {
     if (controller.player1.isPressed(ControllerButton.A)) {
-        CallGravity()
         if (LevelChoice == 0) {
             Map1()
             Ready.destroy()
         }
         if (CharChoice == 1) {
-            Mario()
+            Mario2()
+        }
+        if (CharChoice2 == 1) {
+            Mario2()
         }
         if (CharChoice == 2) {
             Kirby()
         }
+        if (CharChoice2 == 2) {
+            Kirby()
+        }
         if (CharChoice == 3) {
-        	
+            MegaMan()
+        }
+        if (CharChoice2 == 3) {
+            MegaMan()
         }
         if (CharChoice == 4) {
+            Pikachu()
+        }
+        if (CharChoice2 == 4) {
             Pikachu()
         }
         if (CharChoice == 5) {
             Link()
         }
-        if (CharChoice == 6) {
-        	
+        if (CharChoice2 == 5) {
+            Link()
         }
+        pause(100)
+        CallGravity()
     }
 })
 function Kirby () {
@@ -592,14 +605,40 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile11, function (sprite, locatio
     }
 })
 function CallGravity () {
-    Mario.ay = 100
-    kiryb.ay = 100
-    Lynk.ay = 100
-    Meguhmen.ay = 100
-    Pykuhchu.ay = 100
+    if (CharChoice == 1) {
+        Mario.ay = 100
+    }
+    if (CharChoice2 == 1) {
+        Mario.ay = 100
+    }
+    if (CharChoice == 2) {
+        kiryb.ay = 100
+    }
+    if (CharChoice2 == 2) {
+        kiryb.ay = 100
+    }
+    if (CharChoice == 3) {
+        Meguhmen.ay = 100
+    }
+    if (CharChoice2 == 3) {
+        Meguhmen.ay = 100
+    }
+    if (CharChoice == 4) {
+        Pykuhchu.ay = 100
+    }
+    if (CharChoice2 == 4) {
+        Pykuhchu.ay = 100
+    }
+    if (CharChoice == 5) {
+        Lynk.ay = 100
+    }
+    if (CharChoice2 == 5) {
+        Lynk.ay = 100
+    }
 }
 let Cursor1: Sprite = null
 let Cursor2: Sprite = null
+let Mario: Sprite = null
 let Pykuhchu: Sprite = null
 let Meguhmen: Sprite = null
 let kiryb: Sprite = null
@@ -615,7 +654,6 @@ let Player2Pika = ""
 let Player2MegaMan = ""
 let Player2Kirby = ""
 let Player2Mario = ""
-let Mario: Sprite = null
 Player2Mario = "false"
 Player2Kirby = "false"
 Player2MegaMan = "false"
