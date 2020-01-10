@@ -288,6 +288,9 @@ d d d f 5 5 5 5 5 5 5 5 f 1 d d
 1 1 f 5 5 5 5 5 5 5 5 5 5 f 1 1 
 `
 }
+/**
+ * OK LA C'EST MON TOUR DE MODIFIER
+ */
 function Link () {
 	
 }
