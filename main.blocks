@@ -33,20 +33,20 @@
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 `</field></shadow></value><value name="kind"><shadow type="spritekind" id="}/Ud#mb3+r!tt4OdgnK-"><field name="MEMBER">Player</field></shadow></value></block></value></block></statement></block><block type="function_definition" id="7#91lA)o7U@1fF.,_-S6" x="800" y="256"><mutation name="Cursor_2" functionid="AKp:^w{pS7l(~kh{M|#{"/><field name="function_name">Cursor_2</field><statement name="STACK"><block type="variables_set" id="Ts@p4wu:Lsg=D?QcjX8Z"><field name="VAR" id="wOB$:cE=25/M7(#PHoh_">Cursor2</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate" id="P1CDi)7~+|t4+OQ=%)-}"><value name="img"><shadow type="screen_image_picker" id="@C|#@gd+QGG+)?)60Y}!"><field name="img">img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . f f f f f f f . . . . . 
-. . . . f 8 8 8 8 8 f . . . . . 
-. . . . . f 8 8 8 8 f . . . . . 
-. . . . . . f 8 8 8 f . . . . . 
-. . . . . f 8 f 8 8 f . . . . . 
-. . . . f 8 f . f 8 f . . . . . 
-. . . f 8 f . . . f f . . . . . 
-. . . . f . . . . . . . . . . . 
+f . . . . . . . . . . . . . . . 
+f f . . . . . . . . . . . . . . 
+f 8 f . . . . . . . . . . . . . 
+f 8 8 f . . . . . . . . . . . . 
+f 8 8 8 f . . . . . . . . . . . 
+f 8 8 8 8 f . . . . . . . . . . 
+f 8 8 8 8 8 f . . . . . . . . . 
+f 8 8 8 8 8 8 f . . . . . . . . 
+f 8 8 8 8 f f f f . . . . . . . 
+f 8 f f 8 f . . . . . . . . . . 
+f f . f 8 f . . . . . . . . . . 
+f . . . f 8 f . . . . . . . . . 
+. . . . f 8 f . . . . . . . . . 
+. . . . . f . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `</field></shadow></value><value name="kind"><shadow type="spritekind" id="2:x]LVSE|*9D(jHrb:F("><field name="MEMBER">Player</field></shadow></value></block></value><next><block type="ctrlgame_control_sprite" id="TZ-7CFe--^.iDNoPz#Z|"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="2" _input_init="true"></mutation><field name="controller">controller.player2</field><value name="sprite"><shadow type="variables_get" id="Qm!Ze[n-g?QK-Z@JWPXz"><field name="VAR" id="wOB$:cE=25/M7(#PHoh_">Cursor2</field></shadow></value><value name="vx"><shadow type="math_number" id="`g4e,mu5U7@iXT/NB(?A"><field name="NUM">100</field></shadow></value><value name="vy"><shadow type="math_number" id="V[!#4(/Tft(=%hvKe9#@"><field name="NUM">100</field></shadow></value></block></next></block></statement></block><block type="function_definition" id=":}+n`9I|Hm5k^uBz%2IW" x="260" y="296"><mutation name="Kirby" functionid="z}=D+mB)_knY|h+n-%(J"/><field name="function_name">Kirby</field><statement name="STACK"><block type="variables_set" id="66nt?@/%BBZS^!~R+(O["><field name="VAR" id="Xm$T@_BE}.^I@to)MrjE">kiryb</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate" id=")BaKk`Mn7qUPtpA+WTmk"><value name="img"><shadow type="screen_image_picker" id="d;hX-[g0hTFg:XHY7Z3G"><field name="img">img`
