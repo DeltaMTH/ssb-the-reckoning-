@@ -313,11 +313,13 @@ function Link () {
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile9, function (sprite, location) {
     if (controller.player1.isPressed(ControllerButton.A)) {
         tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile9)
+        Player2Kirby = "false"
         StartGame1 += 1
         CharChoice = 2
     }
     if (controller.player2.isPressed(ControllerButton.A)) {
         tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile9)
+        Player2Kirby = "true"
         StartGame2 += 1
         CharChoice2 = 2
     }
@@ -325,26 +327,77 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile9, function (sprite, location
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location) {
     if (controller.player1.isPressed(ControllerButton.A)) {
         tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile1)
+        Player2Link = "false"
         StartGame1 += 1
         CharChoice = 5
     }
     if (controller.player2.isPressed(ControllerButton.A)) {
         tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile1)
+        Player2Link = "true"
         StartGame2 += 1
         CharChoice2 = 5
     }
 })
+function CallGravity () {
+    Mario2.x = 0
+    Mario2.x = 0
+    Mario2.x = 0
+    Mario2.x = 0
+    Mario2.x = 0
+}
 function Mario () {
-	
+    Mario2 = sprites.create(img`
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f f 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f f 1 1 1 1 1 f 1 1 1 
+1 1 1 1 f 1 f 1 1 1 1 1 f 1 1 1 
+1 1 1 1 f 1 f 1 1 1 1 1 f 1 1 1 
+1 1 1 1 f 1 1 f 1 1 1 f 1 f 1 1 
+1 1 1 f 1 1 1 1 f 1 1 f 1 f 1 1 
+1 1 1 f 1 1 1 1 f 1 1 f 1 f 1 1 
+1 1 1 f 1 1 1 1 1 f f f 1 1 f 1 
+1 1 1 f 1 1 1 1 1 f f 1 1 1 1 f 
+1 1 1 f 1 1 1 1 1 1 f 1 1 1 1 f 
+1 1 f 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+`, SpriteKind.Player)
+    if (Player2Mario == "false") {
+        controller.moveSprite(Mario2, 100, 0)
+    }
+    if (Player2Mario == "true") {
+        controller.player2.moveSprite(Mario2, 100, 0)
+    }
 }
 function Mrgame () {
 	
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.banner, function (sprite, otherSprite) {
     if (controller.player1.isPressed(ControllerButton.A)) {
+        CallGravity()
         if (LevelChoice == 0) {
             Map1()
             Ready.destroy()
+        }
+        if (CharChoice == 1) {
+            Mario()
+        }
+        if (CharChoice == 2) {
+            Kirby()
+        }
+        if (CharChoice == 3) {
+            MegaMan()
+        }
+        if (CharChoice == 4) {
+            Pikachu()
+        }
+        if (CharChoice == 5) {
+            Link()
+        }
+        if (CharChoice == 6) {
+        	
         }
     }
 })
@@ -354,11 +407,13 @@ function Kirby () {
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile14, function (sprite, location) {
     if (controller.player1.isPressed(ControllerButton.A)) {
         tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile14)
+        Player2Pika = "false"
         StartGame1 += 1
         CharChoice = 4
     }
     if (controller.player2.isPressed(ControllerButton.A)) {
         tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile14)
+        Player2Pika = "True"
         StartGame2 += 1
         CharChoice2 = 4
     }
@@ -369,11 +424,13 @@ function Ike () {
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location) {
     if (controller.player1.isPressed(ControllerButton.A)) {
         tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile8)
+        Player2Mario = "false"
         StartGame1 += 1
         CharChoice = 1
     }
     if (controller.player2.isPressed(ControllerButton.A)) {
         tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile8)
+        Player2Mario = "true"
         StartGame2 += 1
         CharChoice2 = 1
     }
@@ -465,33 +522,43 @@ function Cursor_1 () {
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile11, function (sprite, location) {
     if (controller.player1.isPressed(ControllerButton.A)) {
         tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile11)
+        Player2MegaMan = "false"
         StartGame1 += 1
         CharChoice = 3
     }
     if (controller.player2.isPressed(ControllerButton.A)) {
         tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile11)
+        Player2MegaMan = "true"
         StartGame2 += 1
         CharChoice2 = 3
     }
 })
-function Samus () {
+function MegaMan () {
 	
 }
 let Cursor1: Sprite = null
 let Cursor2: Sprite = null
 let Ready: Sprite = null
+let Mario2: Sprite = null
 let StartGame2 = 0
 let StartGame1 = 0
 let LevelChoice = 0
 let CharChoice2 = 0
 let CharChoice = 0
+let Player2Link = ""
+let Player2Pika = ""
+let Player2MegaMan = ""
+let Player2Kirby = ""
+let Player2Mario = ""
+Player2Mario = "false"
+Player2Kirby = "false"
+Player2MegaMan = "false"
+Player2Pika = "false"
+Player2Link = "false"
 CharChoice = 0
 CharChoice2 = 0
 LevelChoice = 0
 Menu()
-/**
- * OK LA C'EST MON TOUR DE MODIFIER
- */
 game.onUpdate(function () {
     if (StartGame1 >= 1 && StartGame2 >= 1) {
         Ready = sprites.create(img`
