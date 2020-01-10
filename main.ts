@@ -309,22 +309,22 @@ d d d d d 1 d d d d d d c 1 c d
 }
 function Link () {
     Lynk = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f f f f f f 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 `, SpriteKind.Player)
 }
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile9, function (sprite, location) {
@@ -356,39 +356,26 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location
     }
 })
 controller.player1.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
-    if (CharChoice == 1) {
-        Mario.vy = -100
+    if (CharChoice == 1 && Mario.isHittingTile(CollisionDirection.Bottom)) {
+        Mario.vy = -50
     }
-    if (CharChoice2 == 1) {
-        Mario.vy = -100
+    if (CharChoice == 2 && kiryb.isHittingTile(CollisionDirection.Bottom)) {
+        kiryb.vy = -50
     }
-    if (CharChoice == 2) {
-        kiryb.vy = -100
+    if (CharChoice == 3 && Meguhmen.isHittingTile(CollisionDirection.Bottom)) {
+        Meguhmen.vy = -50
     }
-    if (CharChoice2 == 2) {
-        kiryb.vy = -100
+    if (CharChoice == 5 && Pykuhchu.isHittingTile(CollisionDirection.Bottom)) {
+        Pykuhchu.vy = -50
     }
-    if (CharChoice == 3) {
-        Meguhmen.vy = -100
-    }
-    if (CharChoice2 == 3) {
-        Meguhmen.vy = -100
-    }
-    if (CharChoice == 4) {
-        Pykuhchu.vy = -100
-    }
-    if (CharChoice2 == 4) {
-        Pykuhchu.vy = -100
-    }
-    if (CharChoice == 5) {
-        Lynk.vy = -100
-    }
-    if (CharChoice2 == 5) {
-        Lynk.ay = -100
+    if (CharChoice == 4 && Lynk.isHittingTile(CollisionDirection.Bottom)) {
+        Lynk.vy = -50
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.banner, function (sprite, otherSprite) {
     if (controller.player1.isPressed(ControllerButton.A)) {
+        Cursor1.destroy()
+        Cursor2.destroy()
         if (LevelChoice == 0) {
             Map1()
             Ready.destroy()
@@ -429,42 +416,42 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.banner, function (sprite, otherS
 })
 function Kirby () {
     kiryb = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 f 1 1 1 1 1 1 f 1 1 1 1 
+1 1 1 1 f 1 1 1 1 f f f 1 1 1 1 
+1 1 1 1 f 1 1 f f f 1 1 1 1 1 1 
+1 1 1 1 f 1 f f 1 1 1 1 1 1 1 1 
+1 1 1 1 f f f 1 1 1 1 1 1 1 1 1 
+1 1 1 1 f 1 f f 1 1 1 1 1 1 1 1 
+1 1 1 1 f 1 1 f f 1 1 1 1 1 1 1 
+1 1 1 1 f 1 1 1 f f 1 1 1 1 1 1 
+1 1 1 1 f f 1 1 1 f f 1 1 1 1 1 
+1 1 1 1 f f 1 1 1 1 f 1 1 1 1 1 
+1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 `, SpriteKind.Player)
 }
 function MegaMan () {
     Meguhmen = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 f f 1 1 1 1 1 1 
+1 f f 1 1 1 1 1 f f 1 1 1 1 1 1 
+1 f f 1 1 1 1 1 f f 1 1 1 1 1 1 
+1 f 1 f 1 1 1 f 1 f 1 1 1 1 1 1 
+1 f 1 f f 1 1 f 1 1 f 1 1 1 1 1 
+1 f 1 1 1 f f 1 1 1 f 1 1 1 1 1 
+1 f 1 1 1 f f 1 1 1 f 1 1 1 1 1 
+1 f 1 1 1 f f 1 1 1 f 1 1 1 1 1 
+1 f 1 1 1 1 1 1 1 1 f 1 1 1 1 1 
+1 f 1 1 f 1 f f 1 1 f 1 1 1 1 1 
+1 f 1 f 1 f f 1 f 1 f 1 1 1 1 1 
+1 f 1 f 1 f f 1 f 1 f 1 1 1 1 1 
+1 1 1 f 1 f 1 1 f f 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 `, SpriteKind.Player)
 }
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile14, function (sprite, location) {
@@ -482,7 +469,21 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile14, function (sprite, locatio
     }
 })
 controller.player2.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
-	
+    if (CharChoice2 == 1 && Mario.isHittingTile(CollisionDirection.Bottom)) {
+        Mario.vy = -50
+    }
+    if (CharChoice2 == 2 && kiryb.isHittingTile(CollisionDirection.Bottom)) {
+        kiryb.vy = -50
+    }
+    if (CharChoice2 == 3 && Meguhmen.isHittingTile(CollisionDirection.Bottom)) {
+        Meguhmen.vy = -50
+    }
+    if (CharChoice2 == 5 && Pykuhchu.isHittingTile(CollisionDirection.Bottom)) {
+        Pykuhchu.vy = -50
+    }
+    if (CharChoice2 == 4 && Lynk.isHittingTile(CollisionDirection.Bottom)) {
+        Lynk.vy = -50
+    }
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location) {
     if (controller.player1.isPressed(ControllerButton.A)) {
@@ -518,22 +519,22 @@ function Map1 () {
 }
 function Pikachu () {
     Pykuhchu = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 f f f f 1 1 1 1 1 1 
+1 1 1 1 1 f f 1 1 f f 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 f 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 f 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 f 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 f 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 f f 1 1 1 1 
+1 1 1 1 1 f f f f f f 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 `, SpriteKind.Player)
 }
 function Mario2 () {
@@ -671,9 +672,9 @@ function CallGravity () {
         Lynk.ay = 100
     }
 }
-let Cursor1: Sprite = null
-let Cursor2: Sprite = null
 let Ready: Sprite = null
+let Cursor2: Sprite = null
+let Cursor1: Sprite = null
 let Pykuhchu: Sprite = null
 let Meguhmen: Sprite = null
 let kiryb: Sprite = null
