@@ -326,6 +326,7 @@ function Link () {
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 `, SpriteKind.Player)
+    Lynk.ay = 100
 }
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile9, function (sprite, location) {
     if (controller.player1.isPressed(ControllerButton.A)) {
@@ -433,6 +434,7 @@ function Kirby () {
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 `, SpriteKind.Player)
+    kiryb.ay = 100
 }
 function MegaMan () {
     Meguhmen = sprites.create(img`
@@ -453,6 +455,7 @@ function MegaMan () {
 1 1 1 f 1 f 1 1 f f 1 1 1 1 1 1 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 `, SpriteKind.Player)
+    Meguhmen.ay = 100
 }
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile14, function (sprite, location) {
     if (controller.player1.isPressed(ControllerButton.A)) {
@@ -536,6 +539,7 @@ function Pikachu () {
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 `, SpriteKind.Player)
+    Pykuhchu.ay = 100
 }
 function Mario2 () {
     Mario = sprites.create(img`
@@ -556,6 +560,7 @@ function Mario2 () {
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 `, SpriteKind.Player)
+    Mario.ay = 100
     if (Player2Mario == "false") {
         controller.moveSprite(Mario, 100, 0)
     }
@@ -642,34 +647,34 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile11, function (sprite, locatio
 })
 function CallGravity () {
     if (CharChoice == 1) {
-        Mario.ay = 100
+    	
     }
     if (CharChoice2 == 1) {
         Mario.ay = 100
     }
     if (CharChoice == 2) {
-        kiryb.ay = 100
+    	
     }
     if (CharChoice2 == 2) {
         kiryb.ay = 100
     }
     if (CharChoice == 3) {
-        Meguhmen.ay = 100
+    	
     }
     if (CharChoice2 == 3) {
         Meguhmen.ay = 100
     }
     if (CharChoice == 4) {
-        Pykuhchu.ay = 100
+    	
     }
     if (CharChoice2 == 4) {
         Pykuhchu.ay = 100
-    }
-    if (CharChoice == 5) {
-        Lynk.ay = 100
-    }
-    if (CharChoice2 == 5) {
-        Lynk.ay = 100
+        if (CharChoice == 5) {
+        	
+        }
+        if (CharChoice2 == 5) {
+            Lynk.ay = 100
+        }
     }
 }
 let Ready: Sprite = null
