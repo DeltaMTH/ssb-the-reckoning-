@@ -355,6 +355,38 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location
         CharChoice2 = 5
     }
 })
+controller.player1.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
+    if (CharChoice == 1) {
+        Mario.vy = -100
+    }
+    if (CharChoice2 == 1) {
+        Mario.vy = -100
+    }
+    if (CharChoice == 2) {
+        kiryb.vy = -100
+    }
+    if (CharChoice2 == 2) {
+        kiryb.vy = -100
+    }
+    if (CharChoice == 3) {
+        Meguhmen.vy = -100
+    }
+    if (CharChoice2 == 3) {
+        Meguhmen.vy = -100
+    }
+    if (CharChoice == 4) {
+        Pykuhchu.vy = -100
+    }
+    if (CharChoice2 == 4) {
+        Pykuhchu.vy = -100
+    }
+    if (CharChoice == 5) {
+        Lynk.vy = -100
+    }
+    if (CharChoice2 == 5) {
+        Lynk.ay = -100
+    }
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.banner, function (sprite, otherSprite) {
     if (controller.player1.isPressed(ControllerButton.A)) {
         if (LevelChoice == 0) {
@@ -448,6 +480,9 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile14, function (sprite, locatio
         StartGame2 += 1
         CharChoice2 = 4
     }
+})
+controller.player2.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
+	
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location) {
     if (controller.player1.isPressed(ControllerButton.A)) {
@@ -638,11 +673,11 @@ function CallGravity () {
 }
 let Cursor1: Sprite = null
 let Cursor2: Sprite = null
-let Mario: Sprite = null
+let Ready: Sprite = null
 let Pykuhchu: Sprite = null
 let Meguhmen: Sprite = null
 let kiryb: Sprite = null
-let Ready: Sprite = null
+let Mario: Sprite = null
 let StartGame2 = 0
 let StartGame1 = 0
 let Lynk: Sprite = null
