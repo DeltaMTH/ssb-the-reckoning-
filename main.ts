@@ -249,6 +249,44 @@ d d d d d 1 f f f 9 9 f d 1 d d
 d d d d d f 8 8 8 f 9 9 f 1 d d 
 1 1 1 1 f 8 8 8 8 8 f f f f 1 1 
 `
+    //% blockIdentity=images._tile
+    export const tile14 = img`
+b b f 5 5 f 1 5 5 f 1 5 5 f b b 
+b b f 5 5 f f 5 5 f f 5 5 f b b 
+b a f 5 5 5 5 5 5 5 5 5 5 f f b 
+b a f 2 2 5 f 5 5 f 5 2 2 f 5 b 
+b a f 5 5 5 5 f f 5 5 5 5 f 5 b 
+b a a f 5 5 5 5 5 5 5 5 f 5 5 b 
+b a f 5 5 5 5 5 5 5 5 5 5 f 5 b 
+b f 5 5 5 5 5 5 5 5 5 5 5 5 f b 
+b f 5 5 5 5 5 5 5 5 5 5 5 5 f b 
+b f 5 5 f 5 5 5 5 5 5 f 5 5 f b 
+b a f f 5 5 5 5 5 5 5 5 f f a b 
+b a f 5 5 5 5 5 5 5 5 5 5 f a b 
+b a f 5 5 5 5 f f 5 5 5 5 f a b 
+b a a f 5 5 5 f f 5 5 5 f a a b 
+b b f 5 5 5 f a a f 5 5 5 f b b 
+b b b b b b b b b b b b b b b b 
+`
+    //% blockIdentity=images._tile
+    export const tile15 = img`
+d 1 d d d d d d d 1 d d d d d d 
+d 1 d d d d d d d 1 d d d d d d 
+d 1 d d d d d d d 1 d d d d d d 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+d d d d d 1 d d d d d d d 1 d d 
+d d d d d 1 d d d d d d d 1 d d 
+d d d d d 1 d d d d d d d 1 d d 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+d d d d d d d d d 1 d d d d d d 
+f f f d d d d d d 1 d d d f f f 
+f e e f d d d d d 1 d d f e e f 
+f e 5 5 f 1 1 1 1 1 1 f 5 5 e f 
+d f 5 5 5 f d d d d f 5 5 5 f d 
+d d f 5 5 5 f f f f 5 5 5 f d d 
+d d d f 5 5 5 5 5 5 5 5 f 1 d d 
+1 1 f 5 5 5 5 5 5 5 5 5 5 f 1 1 
+`
 }
 function Link () {
 	
@@ -311,7 +349,7 @@ function Map1 () {
 . . . . . . . . . . 
 . . . . . . . . . . 
 `,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,sprites.dungeon.greenOuterNorth0,sprites.dungeon.chestOpen,sprites.builtin.forestTiles1,sprites.builtin.forestTiles3,sprites.builtin.forestTiles2,sprites.builtin.forestTiles5,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.builtin.forestTiles6,sprites.builtin.forestTiles8,sprites.builtin.forestTiles7,sprites.builtin.forestTiles10,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile13],
+            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,sprites.dungeon.greenOuterNorth0,sprites.dungeon.chestOpen,sprites.builtin.forestTiles1,sprites.builtin.forestTiles3,sprites.builtin.forestTiles2,sprites.builtin.forestTiles5,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.builtin.forestTiles6,sprites.builtin.forestTiles8,sprites.builtin.forestTiles7,sprites.builtin.forestTiles10,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile13,myTiles.tile14,myTiles.tile15],
             TileScale.Sixteen
         ))
 }
@@ -343,7 +381,7 @@ function Menu () {
     scene.centerCameraAt(88, 0)
     scene.setBackgroundColor(1)
     tiles.setTilemap(tiles.createTilemap(
-            hex`0b0008000a0a0a0a0a0a0a0a0f0a0a0a0a0b0a0a0c0a0a0e0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0d0a0a0d0a0a0d0a0a0a0a0a0a0a0a0a0a0a0a0a02020202020202020202020202020d0202020d0202020202020202020202020202`,
+            hex`0b0008000a0a0a0a0a0a0a0a0f0a0a0a0a0b0a0a0c0a0a0e0a0a0a0a110a0a0a0a0a0a0a0a0a0a100a0a0d0a0a0d0a0a0a0a0a0a0a0a0a0a0a0a0a02020202020202020202020202020d0202020d0202020202020202020202020202`,
             img`
 . . . . . . . . . . . 
 . . . . . . . . . . . 
@@ -354,7 +392,7 @@ function Menu () {
 . . . . . . . . . . . 
 . . . . . . . . . . . 
 `,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,sprites.builtin.oceanSand13,sprites.builtin.oceanSand8,sprites.builtin.brick,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile13],
+            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,sprites.builtin.oceanSand13,sprites.builtin.oceanSand8,sprites.builtin.brick,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile13,myTiles.tile14,myTiles.tile15],
             TileScale.Sixteen
         ))
     Cursor_1()
