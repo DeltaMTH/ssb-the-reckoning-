@@ -214,11 +214,11 @@ b b b b b b b b b b b b b b b b
     //% blockIdentity=images._tile
     export const tile11 = img`
 b b b b f 8 8 8 8 8 f 9 9 8 f b 
-b b . f 9 8 8 8 8 8 8 f f 8 f b 
-b . . f 9 8 8 d 1 1 1 8 8 1 f b 
-b . . f 9 8 d 1 1 f f d f 1 f b 
-b . . . f 8 d 1 1 f f d f 1 f b 
-b . . f f 8 d d 1 1 1 d 1 d f b 
+b b 2 f 9 8 8 8 8 8 8 f f 8 f b 
+b 2 2 f 9 8 8 d 1 1 1 8 8 1 f b 
+b 2 2 f 9 8 d 1 1 f f d f 1 f b 
+b 2 2 2 f 8 d 1 1 f f d f 1 f b 
+b 2 2 f f 8 d d 1 1 1 d 1 d f b 
 b f f 9 9 f 8 d f f f f d f f b 
 b 8 9 9 9 9 f d d d d d f 9 9 b 
 b 8 8 9 9 9 9 f f f f f 9 9 8 b 
@@ -227,7 +227,7 @@ b 8 f f f 9 9 9 9 9 9 9 f f f b
 b 8 8 f f 8 8 8 8 8 8 8 f f 8 b 
 b 8 8 f 9 9 8 8 8 8 9 9 9 f 8 b 
 b f f 8 8 9 9 9 f 9 9 9 9 8 f b 
-b b f 8 8 8 9 f . f 9 8 8 8 b b 
+b b f 8 8 8 9 f 2 f 9 8 8 8 b b 
 b b b b b b b b b b b b b b b b 
 `
     //% blockIdentity=images._tile
