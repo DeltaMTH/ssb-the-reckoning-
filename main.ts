@@ -23,22 +23,22 @@ namespace myTiles {
 `
     //% blockIdentity=images._tile
     export const tile1 = img`
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
+b b b b b 7 7 7 7 7 7 7 c 1 c b 
+b b 9 d 9 7 e e e e e e c 1 c b 
+b 9 9 d 9 e e e e e e e c 1 c b 
+b 9 9 d d e d 1 d d 1 d c 1 c b 
+b 9 9 d d e d 8 d d 8 d c 1 c b 
+b 9 9 9 d d d d d d d d c 1 c b 
+b 9 9 7 7 d d d e e d d c 1 c b 
+b 8 8 8 8 8 8 d d d d 7 c 1 c e 
+8 8 5 8 8 8 8 8 7 7 7 7 c 1 c e 
+8 5 5 5 8 8 8 6 7 7 7 8 8 c 8 8 
+8 8 5 8 8 8 8 6 e e 7 7 d e d d 
+8 8 5 8 8 8 8 6 7 e e e 5 e d d 
+8 8 8 8 8 8 8 6 e e 7 7 7 c d b 
+b 6 6 6 6 6 6 e 7 7 7 7 7 9 9 b 
+b b 9 9 9 e e e 9 9 e e e 9 b b 
+b b b b b e e e b b b b b b b b 
 `
     //% blockIdentity=images._tile
     export const tile2 = img`
@@ -287,10 +287,26 @@ d d f 5 5 5 f f f f 5 5 5 f d d
 d d d f 5 5 5 5 5 5 5 5 f 1 d d 
 1 1 f 5 5 5 5 5 5 5 5 5 5 f 1 1 
 `
+    //% blockIdentity=images._tile
+    export const tile17 = img`
+d 1 d d d d d d d 1 d d d d d d 
+d 1 d d d d d d d 1 d d d d d d 
+d 1 d d d d d d d 1 d d d d d d 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+d d d d d 1 d d d d d d d 1 d d 
+d d d d d 1 d d d d d d d 1 d d 
+d d d d d 1 d d d d d d d 1 d d 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+d 1 d d d d d d d 1 d d d d d d 
+d 1 d d d d d d d 1 d d d d d d 
+d 1 d d d d d d d 1 d d d c d d 
+1 1 1 1 1 1 1 1 1 1 1 1 1 c 1 1 
+d d d d d 1 d d d d d d c 1 c d 
+d d d d d 1 d d d d d d c 1 c d 
+d d d d d 1 d d d d d d c 1 c d 
+1 1 1 1 1 1 7 7 7 7 7 7 c 1 c 1 
+`
 }
-/**
- * OK LA C'EST MON TOUR DE MODIFIER
- */
 function Link () {
 	
 }
@@ -304,6 +320,18 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile9, function (sprite, location
         tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile9)
         StartGame2 += 1
         CharChoice2 = 2
+    }
+})
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location) {
+    if (controller.player1.isPressed(ControllerButton.A)) {
+        tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile1)
+        StartGame1 += 1
+        CharChoice = 5
+    }
+    if (controller.player2.isPressed(ControllerButton.A)) {
+        tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile1)
+        StartGame2 += 1
+        CharChoice2 = 5
     }
 })
 function Mario () {
@@ -364,7 +392,7 @@ function Map1 () {
 . . . . . . . . . . 
 . . . . . . . . . . 
 `,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,sprites.dungeon.greenOuterNorth0,sprites.dungeon.chestOpen,sprites.builtin.forestTiles1,sprites.builtin.forestTiles3,sprites.builtin.forestTiles2,sprites.builtin.forestTiles5,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.builtin.forestTiles6,sprites.builtin.forestTiles8,sprites.builtin.forestTiles7,sprites.builtin.forestTiles10,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile13,myTiles.tile14,myTiles.tile15,sprites.castle.tilePath8],
+            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,sprites.dungeon.greenOuterNorth0,sprites.dungeon.chestOpen,sprites.builtin.forestTiles1,sprites.builtin.forestTiles3,sprites.builtin.forestTiles2,sprites.builtin.forestTiles5,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.builtin.forestTiles6,sprites.builtin.forestTiles8,sprites.builtin.forestTiles7,sprites.builtin.forestTiles10,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile13,myTiles.tile14,myTiles.tile15,sprites.castle.tilePath8,myTiles.tile17],
             TileScale.Sixteen
         ))
 }
@@ -396,7 +424,7 @@ function Menu () {
     scene.centerCameraAt(88, 0)
     scene.setBackgroundColor(1)
     tiles.setTilemap(tiles.createTilemap(
-            hex`0b0008000a0a0a0a0a0a0a0a0f0a0a0a0a0b0a0a0c0a0a0e0a0a0a0a110a0a0a0a0a0a0a0a0a0a100a0a0d0a0a0d0a0a0a0a0a0a0a0a0a0a0a0a0a02020202020202020202020202020d0202020d0202020202020202020202020202`,
+            hex`0b0008000a0a0a0a0a0a0a0a0f0a0a0a0a0b0a0a0c0a0a0e0a0a0a0a110a0a120a0a0a0a0a0a0a100a0a010a0a0d0a0a0a0a0a0a0a0a0a0a0a0a0a02020202020202020202020202020d0202020d0202020202020202020202020202`,
             img`
 . . . . . . . . . . . 
 . . . . . . . . . . . 
@@ -407,7 +435,7 @@ function Menu () {
 . . . . . . . . . . . 
 . . . . . . . . . . . 
 `,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,sprites.builtin.oceanSand13,sprites.builtin.oceanSand8,sprites.builtin.brick,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile13,myTiles.tile14,myTiles.tile15],
+            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,sprites.builtin.oceanSand13,sprites.builtin.oceanSand8,sprites.builtin.brick,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile13,myTiles.tile14,myTiles.tile15,myTiles.tile17],
             TileScale.Sixteen
         ))
     Cursor_1()
@@ -461,6 +489,9 @@ CharChoice = 0
 CharChoice2 = 0
 LevelChoice = 0
 Menu()
+/**
+ * OK LA C'EST MON TOUR DE MODIFIER
+ */
 game.onUpdate(function () {
     if (StartGame1 >= 1 && StartGame2 >= 1) {
         Ready = sprites.create(img`
