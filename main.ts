@@ -320,6 +320,18 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.banner, function (sprite, otherS
 function Kirby () {
 	
 }
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile14, function (sprite, location) {
+    if (controller.player1.isPressed(ControllerButton.A)) {
+        tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile14)
+        StartGame1 += 1
+        CharChoice = 4
+    }
+    if (controller.player2.isPressed(ControllerButton.A)) {
+        tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile14)
+        StartGame2 += 1
+        CharChoice2 = 4
+    }
+})
 function Ike () {
 	
 }
@@ -344,12 +356,12 @@ function Map1 () {
 . . . . . . . . . . 
 . . . . . . . . . . 
 . . . . . . . . . . 
-. . . . . . . . . . 
+. 2 2 2 2 2 2 2 2 . 
 . . . . . . . . . . 
 . . . . . . . . . . 
 . . . . . . . . . . 
 `,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,sprites.dungeon.greenOuterNorth0,sprites.dungeon.chestOpen,sprites.builtin.forestTiles1,sprites.builtin.forestTiles3,sprites.builtin.forestTiles2,sprites.builtin.forestTiles5,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.builtin.forestTiles6,sprites.builtin.forestTiles8,sprites.builtin.forestTiles7,sprites.builtin.forestTiles10,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile13,myTiles.tile14,myTiles.tile15],
+            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,sprites.dungeon.greenOuterNorth0,sprites.dungeon.chestOpen,sprites.builtin.forestTiles1,sprites.builtin.forestTiles3,sprites.builtin.forestTiles2,sprites.builtin.forestTiles5,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.builtin.forestTiles6,sprites.builtin.forestTiles8,sprites.builtin.forestTiles7,sprites.builtin.forestTiles10,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile13,myTiles.tile14,myTiles.tile15,sprites.castle.tilePath8],
             TileScale.Sixteen
         ))
 }
