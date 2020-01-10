@@ -253,6 +253,16 @@ d d d d d f 8 8 8 f 9 9 f 1 d d
 function Link () {
 	
 }
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile9, function (sprite, location) {
+    if (controller.player1.isPressed(ControllerButton.A)) {
+        tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile9)
+        StartGame1 += 1
+    }
+    if (controller.player2.isPressed(ControllerButton.A)) {
+        tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile9)
+        StartGame2 += 1
+    }
+})
 function Mario () {
 	
 }
@@ -275,12 +285,10 @@ function Ike () {
 }
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location) {
     if (controller.player1.isPressed(ControllerButton.A)) {
-        tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile3)
         tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile8)
         StartGame1 += 1
     }
     if (controller.player2.isPressed(ControllerButton.A)) {
-        tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile3)
         tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile8)
         StartGame2 += 1
     }
@@ -369,14 +377,24 @@ function Cursor_1 () {
 `, SpriteKind.Player)
     controller.moveSprite(Cursor1, 100, 100)
 }
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile11, function (sprite, location) {
+    if (controller.player1.isPressed(ControllerButton.A)) {
+        tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile11)
+        StartGame1 += 1
+    }
+    if (controller.player2.isPressed(ControllerButton.A)) {
+        tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile11)
+        StartGame2 += 1
+    }
+})
 function Samus () {
 	
 }
 let Cursor1: Sprite = null
 let Cursor2: Sprite = null
+let Ready: Sprite = null
 let StartGame2 = 0
 let StartGame1 = 0
-let Ready: Sprite = null
 let LevelChoice = 0
 LevelChoice = 0
 Menu()
@@ -411,8 +429,5 @@ d f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
 `, SpriteKind.banner)
         StartGame1 = 0
         StartGame2 = 0
-    }
-    if (controller.player1.isPressed(ControllerButton.B)) {
-        Ready.setVelocity(1000, 0)
     }
 })
